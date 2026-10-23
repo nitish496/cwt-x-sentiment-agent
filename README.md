@@ -4,7 +4,7 @@ Python research pipeline for the CrowdWisdomTrading internship assessment. The c
 
 ## Current status
 
-The project includes a local ingestion, feature, forecast, and reporting workflow. Live Apify/Tavily/Exa credentials and an approved historical X export are not available yet. The code supports an offline data path; synthetic fixture output is never empirical model performance. A clean editable install from the package index succeeded in Python 3.12; the suite currently contains 26 tests and Ruff checks are available.
+The project includes a local ingestion, feature, forecast, and reporting workflow. A limited Apify token is stored only in ignored local `.env`; an Actor ID/configuration and Tavily/Exa credentials are not available yet. No approved historical X export is available. The code supports an offline data path; synthetic fixture output is never empirical model performance. A clean editable install from the package index succeeded in Python 3.12; the suite currently contains 26 tests and Ruff checks are available.
 
 ## Setup
 
