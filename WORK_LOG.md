@@ -1,0 +1,33 @@
+# Work Log — CWT X Sentiment Price Prediction
+
+## 2026-10-22 — Assignment received and scaffold planned
+- Read the internship assignment and linked historical-data catalog from Google Docs.
+- Verified the request: Apify X ingestion for the latest 180 days, historical tweets for learning, matching historical prices, current news, time-based sentiment/price features, six forecast horizons, walk-forward validation, visual matrix, sentiment outlook, and report with risk metrics.
+- Verified the historical-data document is a catalog of options and constraints, not a provided dataset file. Some entries are not X data or are very large.
+- Created a separate project scaffold under `outputs/cwt-x-sentiment-agent/`, including source, tests, data, reports, and research directories, `plot.md`, and this log.
+- No source code, live scrape, credentials, email, or repository publication yet.
+- Confirmed by user: BTC-USD, daily intervals, n+0 as the latest completed daily close; local SQLite and UTC timestamps.
+
+## 2026-10-22 — Research and implementation loop 1
+- Completed independent methodology, provider, and dataset reviews; their memos are in `research/`.
+- Implemented local config checks, Coinbase daily bars, bounded Apify/Tavily/Exa adapters, source-mapped CSV/JSONL post import, SQLite storage, daily features, purged expanding walk-forward Ridge forecasts, synthetic-only fixtures, outlook/evaluation report writers, and CLI commands.
+- Added unit tests for provider calls, dataset import, features/modeling, and SQLite persistence. No live calls were made.
+- Updated Python minimum to 3.9 after confirming source/test syntax under Python 3.9 and compilation under bundled Python 3.12.
+- At initial scaffold checkpoint, pytest/dependencies were unavailable and package-index DNS failed; subsequent local runtime discovery enabled testing without network installs.
+- Still blocked on real inputs: no Apify/Tavily/Exa credentials, no reviewed Actor selection/config, and no license-verified historical X dataset. Therefore live scraping, current-news outlook, empirical performance metrics, and real-data Sharpe/Sortino/MDD are not complete. Do not substitute fabricated/synthetic results.
+- No GitHub repository, push, email, or external submission performed.
+- Follow-up QA loop: stabilized Coinbase UTC timestamp precision and fixed Ruff findings. Added current n+1..n+5 inference, excluded the current partial UTC candle, and made Apify example placeholders (including max-item cap) resolve. Current forecast output now feeds the one-page outlook.
+- Second QA loop: suite passed 25/25; Ruff clean. Ran synthetic-only CLI end-to-end for current forecasts, one-page outlook, expanding walk-forward predictions, cost sensitivity report, forecast-vs-actual SVG, and sentiment-vs-price SVG. Reports were written to `/tmp` and clearly marked synthetic; no synthetic results copied into deliverables.
+- Removed matplotlib dependency and replaced PNG generation with a dependency-free accessible SVG, so report generation no longer needs network-installed plotting packages. CLI help and `config-check` run successfully without live secrets.
+- GitHub release remains blocked: no repository exists; local `gh` login for the saved account is invalid, and the connected GitHub app reports no accessible repositories. No repo created or push attempted. Re-authentication needs the user to complete GitHub's identity flow.
+- Additional assignment-coverage loop: added a second accessible SVG plotting daily X sentiment against the BTC close indexed to 100, with gaps on no-post days. Added a discovered 76,797-row CC BY 4.0 dataset candidate to the research memo, but its timestamps, IDs, and underlying X rights are not verified; it remains unapproved.
+- Final artifact QA loop: added an integration test that verifies evaluation writes both SVG charts and links them from the report. Python 3.12 suite passes 26/26 and Ruff passes. Updated README install-status wording and recorded the user-provided assignment receipt date while preserving the deadline ambiguity. Package rebuilt and privacy/content audited; live-data and GitHub publication remain pending credentials and account reauthentication.
+
+## 2026-10-23 — Submission recovery and release loop
+- Read the linked dataset catalog directly: it provides candidate descriptions and links but no tweet data file. Independent provenance review found the 76,797-row Mendeley-backed candidate's platform/schema/date coverage are not established by its primary record, and a CC license alone does not establish rights to redistribute underlying X content. Current X policy/terms require an approved acquisition method; do not scrape or use unverified corpora until CWT confirms permission.
+- User asked to remove the partial email. Moved our sent copy to Gmail Trash; this cannot recall the copy already delivered to Gilad. User then authorized project completion and final submission.
+- Network access was enabled for the project. A fresh Python 3.12 venv installed the package and dev dependencies; 26 tests and Ruff passed. Corrected Tavily to enforce its requested publish-date window and added a mocked request assertion.
+- An earlier, incomplete ZIP submission was emailed to the assignment contact with limitations disclosed, then our copy was moved to Trash. The recipient may still have that delivered message.
+- Apify account onboarding completed with the profile name reduced to a first name; the student identifier was not transmitted. GitHub CLI authorization is now active.
+- A fresh final verification pass reconfirmed 26 passing tests and clean Ruff checks. A final ZIP and repository privacy scan are in progress.
+- Current blockers for empirical completion: no Apify/Tavily/Exa API tokens and no CWT-approved historical X source/acquisition permission. Consequently, live X ingestion, current-news analysis, empirical walk-forward metrics, and real-data Sharpe/Sortino/MDD are still unavailable. Do not fabricate results or email raw API tokens.

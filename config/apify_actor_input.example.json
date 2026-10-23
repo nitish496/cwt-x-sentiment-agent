@@ -1,0 +1,6 @@
+{
+  "searchTerms": ["Bitcoin", "BTC"],
+  "startDate": "{{START_DATE}}",
+  "endDate": "{{END_DATE}}",
+  "maxItems": "{{MAX_ITEMS}}"
+}
