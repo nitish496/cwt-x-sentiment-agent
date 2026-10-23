@@ -33,7 +33,7 @@ Linked historical-data catalog: Google Doc `Historical Twitter/X Datasets — Ve
 
 ## Decision gates and risks
 - Historical dataset is still unselected; the linked document is a catalog rather than an attached file. Never claim validation until a suitable dataset is supplied and checked.
-- No Apify, Tavily, or Exa credentials supplied. The assignment's linked dataset catalog contains metadata and download links, not actual tweet data. The user has authorized project work, but current X policy/terms and third-party corpus rights still require an approved acquisition method; do not scrape or use an unverified corpus until CWT confirms permission and the source is validated.
+- A limited, expiring Apify API token is stored only in the ignored local `.env`; no Actor ID/configuration or Tavily/Exa credentials are available. The assignment's linked dataset catalog contains metadata and download links, not actual tweet data. The user has authorized project work, but current X policy/terms and third-party corpus rights still require an approved acquisition method; do not scrape or use an unverified corpus until CWT confirms permission and the source is validated.
 - The linked historical catalog includes large data (up to tens of GB), and one listed source is StockTwits, not X. Do not imply it is X. Select a small, licensed, relevant dataset only after source verification.
 - Performance metrics require a deterministic signal-to-position/backtest rule, transaction-cost assumption, and out-of-sample predictions. Never invent or report metrics from in-sample fits.
 - Current news can inform the sentiment outlook but must not leak into historical prediction features unless timestamped and available before each forecast cutoff.
